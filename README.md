@@ -22,44 +22,44 @@ See the full `go-gh`  [reference documentation](https://pkg.go.dev/github.com/cl
 package main
 
 import (
-	"fmt"
-	"log"
-	"github.com/cli/go-gh/v2"
-	"github.com/cli/go-gh/v2/pkg/api"
+"FMT" 
+"Log" 
+"github.com/cli/go-gh/v2" 
+"github.com/cli/go-gh/v2/pkg/api" 
 )
 
 func main() {
-	// These examples assume `gh` is installed and has been authenticated.
+// Estos ejemplos asumen que 'gh' está instalado y ha sido autenticado.  
 
-	// Shell out to a gh command and read its output.
-	issueList, _, err := gh.Exec("issue", "list", "--repo", "cli/cli", "--limit", "5")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(issueList.String())
+// Shell a un comando gh y leer su salida.  
+issueList, _, err:= gh. Exec ("issue", "list", "--repo", "cli/cli", "-limit", "5") 
+si err!= nil { 
+ Fatal (err) 
+} 
+FMT. Println (número de edición. Cuerda ())  
 
-	// Use an API client to retrieve repository tags.
-	client, err := api.DefaultRESTClient()
-	if err != nil {
-		log.Fatal(err)
-	}
-	response := []struct{
-		Name string
-	}{}
-	err = client.Get("repos/cli/cli/tags", &response)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(response)
+// Utilice un cliente API para recuperar etiquetas de repositorio.  
+Cliente, err:= API. RESTClient predeterminado () 
+si err!= nil { 
+ Fatal (err) 
+} 
+Respuesta:= []struct{  
+  Nombre cadena  
+}{} 
+err = cliente. Obtener ("repos/cli/cli/tags", &response)  
+si err!= nil { 
+ Fatal (err) 
+} 
+FMT. Impresión (respuesta) 
 }
-```
+"'
 
 See [examples][] for more demonstrations of usage.
 
 ## Contributing
 
-If anything feels off, or if you feel that some functionality is missing, please check out our [contributing docs][contributing]. There you will find instructions for sharing your feedback and for submitting pull requests to the project. Thank you!
+Si algo se siente mal, o si sientes que falta alguna funcionalidad, por favor echa un vistazo a nuestro [contribuir docs][contribuir]. Allí encontrará instrucciones para compartir sus comentarios y para enviar solicitudes de extracción al proyecto. ¡Gracias!!
 
-[extensions]: https://docs.github.com/en/github-cli/github-cli/creating-github-cli-extensions
+[extensiones]: https://docs.github.com/en/github-cli/github-cli/creating-github-cli-extensions
 [examples]: ./example_gh_test.go
 [contributing]: ./.github/CONTRIBUTING.md
